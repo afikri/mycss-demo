@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: minmax(250px, auto);
+    grid-template-areas:
+        "hd hd hd hd   hd   hd   hd   hd   hd"
+        "sd sd sd main main main main main main"
+        "ft ft ft ft   ft   ft   ft   ft   ft";
+}
+
+.header {
+    background-color: red;
+    grid-area: hd;
+}
+
+.footer {
+    background-color: blue;
+    grid-area: ft;
+}
+
+.content {
+    background-color: yellow;
+    grid-area: main;
+}
+
+.sidebar {
+    background-color: green;
+    grid-area: sd;
+}

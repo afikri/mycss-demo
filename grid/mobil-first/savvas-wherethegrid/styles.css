@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#photos{
+    margin-top: 30px;
+}
+
+#photos{
+    display: block;
+    width: 100%;
+    margin-top: 9px;
+}

@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas:
+        "main main main main main main main sd sd";
+}
+
+.left {
+    background-color: yellow;
+    grid-area: main;
+}
+
+.right {
+    background-color: green;
+    grid-area: sd;
+}

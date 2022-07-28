@@ -1,0 +1,174 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas:
+        'aside header'
+        'aside main'
+        'aside footer';
+    height: 100vh;
+} */
+/* It was like above, since we approach the mobile first design it becomes as ::-webkit-validation-bubble-arrow */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer';
+    height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    background-color: red;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    grid-area: aside;
+    background-color: blue;
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    overflow-y: auto;
+    transform: translateX(-245px);
+}
+
+.aside.active {
+    transform: translateX(0);
+}
+
+.aside_list {
+    padding: 0;
+    margin-top: 85px;
+    list-style-type: none;
+}
+
+.aside_list_item {
+    padding: 20px 20px 20px 40px;
+}
+
+.aside_list_item:hover {
+    cursor: pointer;
+    background-color: blueviolet;
+}
+
+.main {
+    grid-area: main;
+    background-color: green;
+}
+
+.main_overview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid burlywood;
+}
+
+.overview_card {
+    display: flex;
+    flex-basis: 250px;
+    flex-grow: 22;
+    margin: 10px 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100px;
+    color: darkblue;
+    border: 1px solid darkblue;
+    border-radius: 4px;
+}
+
+.main_cards {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 500px 200px 300px;
+    grid-template-areas:
+        'card1'
+        'card2'
+        'card3';
+    gap: 10px;
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid tomato;
+    border-radius: 4px;
+    color: tomato;
+}
+
+.card:first-child {
+    grid-area: card1;
+}
+
+.card:nth-child(2) {
+    grid-area: card2;
+}
+
+.card:nth-child(3) {
+    grid-area: card3;
+}
+
+
+.footer {
+    grid-area: footer;
+    background-color: yellow;
+}
+
+.header,
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* for media above 750px approach */
+@media only screen and (min-width: 750px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        grid-template-rows: 50px 1fr 50px;
+        grid-template-areas:
+            'aside header'
+            'aside main'
+            'aside footer';
+        height: 100vh;
+    }
+
+    .aside {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transform: translateX(0);
+    }
+
+    .main_cards {
+        margin: 10px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 200px 300px;
+        grid-template-areas:
+            'card1 card2'
+            'card1 card3';
+        grid-gap: 10px;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .aside_close-icon {
+        display: none;
+    }
+}

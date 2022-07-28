@@ -1,0 +1,31 @@
+.grid-container {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  
+}
+
+.grid-item {
+  padding: 0;
+  margin: 0;
+  background-color: red;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.left {
+  padding: 0;
+  margin: 0;
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  background: #7c5756;
+}
+
+.right {
+  grid-row: 2 / span 3;
+  grid-column: 3;
+  background: #ec7272;
+  padding: 20px;
+  font-size: 30px;
+}
